@@ -4,5 +4,6 @@ namespace LightningPT.Application
 {
     public class LightningPTApplicationModule : AbpModule
     {
+        
     }
 }
