@@ -5,5 +5,6 @@ namespace LightningPT.Core
 {
     public class LightningPTCoreModule : AbpModule
     {
+        
     }
 }
