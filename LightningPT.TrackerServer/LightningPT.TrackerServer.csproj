@@ -9,4 +9,8 @@
       <ProjectReference Include="..\LightningPT.Core\LightningPT.Core.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="BencodeNET" Version="2.2.24" />
+    </ItemGroup>
+
 </Project>

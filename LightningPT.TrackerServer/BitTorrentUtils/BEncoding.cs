@@ -11,6 +11,7 @@ namespace LightningPT.TrackerServer.BitTorrentUtils
     /// <summary>
     /// B 编码相关的序列化与反序列化工具类
     /// </summary>
+    [Obsolete("已经弃用，请使用 BencodeNET 库所提供的方法。")]
     public static class BEncoding
     {
         // 字典定义
