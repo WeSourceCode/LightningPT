@@ -11,5 +11,10 @@ namespace LightningPT.TrackerServer.AnnounceService.Dtos.InputDto
         public long DownLoaded { get; set; }
 
         public string Event { get; set; }
+
+        /// <summary>
+        /// 用户唯一密钥。
+        /// </summary>
+        public string PassKey { get; set; }
     }
 }

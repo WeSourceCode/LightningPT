@@ -8,8 +8,4 @@
       <PackageReference Include="Abp" Version="4.0.2" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Entities" />
-    </ItemGroup>
-
 </Project>
