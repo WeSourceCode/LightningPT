@@ -4,7 +4,7 @@ using Abp.Domain.Entities;
 namespace LightningPT.Core.Entities
 {
     /// <summary>
-    /// PT 站用户实体
+    /// PT 站用户实体定义。
     /// </summary>
     public class PtUser : Entity<long>
     {
@@ -42,6 +42,16 @@ namespace LightningPT.Core.Entities
         /// 最后登录的时间
         /// </summary>
         public DateTime? LasLoginDateTime { get; set; }
+
+        /// <summary>
+        /// 是否被禁止登录。
+        /// </summary>
+        public bool IsBanned { get; set; }
+
+        /// <summary>
+        /// 被拉入小小黑屋的时间，可能为 NULL。
+        /// </summary>
+        public DateTime? BannedTime { get; set; }
 
         /// <summary>
         /// 用户的唯一密钥

@@ -1,11 +1,15 @@
+using System;
 using Abp.Domain.Entities;
 
 namespace LightningPT.Core.Entities
 {
+    /// <summary>
+    /// 用户上传的种子实体定义。
+    /// </summary>
     public class PtBitTorrent : Entity<string>
     {
         /// <summary>
-        /// 种子上传用户
+        /// 上传种子用户的用户。
         /// </summary>
         public long Uploader { get; set; }
 
@@ -28,5 +32,15 @@ namespace LightningPT.Core.Entities
         /// 种子的唯一 Hash 标识。
         /// </summary>
         public string InfoHash { get; set; }
+
+        /// <summary>
+        /// 种子上传时间。
+        /// </summary>
+        public DateTime UploadTime { get; set; }
+
+        /// <summary>
+        /// 种子下载量统计。
+        /// </summary>
+        public long DownLoadCount { get; set; }
     }
 }
