@@ -6,7 +6,7 @@ namespace LightningPT.Core.Entities
     /// <summary>
     /// 用户上传的种子实体定义。
     /// </summary>
-    public class PtBitTorrent : Entity<string>
+    public class PtBitTorrent : Entity<int>
     {
         /// <summary>
         /// 上传种子用户的用户。

@@ -1,6 +1,6 @@
 namespace LightningPT.TrackerServer.BitTorrentTracker
 {
-    public enum TrackerEvent
+    public enum TorrentEvent
     {
         None,
         Started,

@@ -8,4 +8,9 @@
       <ProjectReference Include="..\LightningPT.Core\LightningPT.Core.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="BackendWebSiteService\BitTorrentManagementService\Dtos\InputDtos" />
+      <Folder Include="FrontWebSiteService\Overview\Dtos" />
+    </ItemGroup>
+
 </Project>

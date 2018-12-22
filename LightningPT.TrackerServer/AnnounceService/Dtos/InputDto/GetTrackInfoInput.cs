@@ -35,7 +35,7 @@ namespace LightningPT.TrackerServer.AnnounceService.Dtos.InputDto
         public long Downloaded { get; set; }
 
         /// <summary>
-        /// 事件表示，具体可以转换为 <see cref="TrackerEvent"/> 枚举的具体值。
+        /// 事件表示，具体可以转换为 <see cref="TorrentEvent"/> 枚举的具体值。
         /// </summary>
         public string Event { get; set; }
 
@@ -43,6 +43,13 @@ namespace LightningPT.TrackerServer.AnnounceService.Dtos.InputDto
         /// 该客户端剩余待下载的数据。
         /// </summary>
         public long Left { get; set; }
+
+        /// <summary>
+        /// 是否启用压缩，当该值为 1 的时候，表示当前客户端接受压缩格式的 Peer 列表，即使用
+        /// 6 字节表示一个 Peer (前 4 字节表示 IP 地址，后 2 字节表示端口号)。当该值为 0
+        /// 的时候则表示客户端不接受。
+        /// </summary>
+        public int Compact { get; set; }
 
         /// <summary>
         /// 用户唯一密钥。

@@ -1,10 +1,15 @@
-﻿using Abp.Modules;
+﻿using Abp;
+using Abp.Modules;
+using LightningPT.Core;
 
 namespace LightningPT.TrackerServer
 {
-    [DependsOn()]
+    [DependsOn(typeof(LightningPTCoreModule))]
     public class LightningPTTrackerServerModule : AbpModule
     {
-        
+        public override void Initialize()
+        {
+            IocManager.RegisterAssemblyByConvention(typeof(LightningPTTrackerServerModule).Assembly);
+        }
     }
 }
