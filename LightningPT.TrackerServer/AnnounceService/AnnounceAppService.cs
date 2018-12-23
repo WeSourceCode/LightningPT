@@ -51,5 +51,10 @@ namespace LightningPT.TrackerServer.AnnounceService
             response.ContentLength = resultBytes.Length;
             await response.Body.WriteAsync(resultBytes);
         }
+
+        public async Task GetScrape()
+        {
+            
+        }
     }
 }

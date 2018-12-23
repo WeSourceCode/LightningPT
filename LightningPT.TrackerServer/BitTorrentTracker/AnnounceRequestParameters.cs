@@ -78,7 +78,7 @@ namespace LightningPT.TrackerServer.BitTorrentTracker
             Left = input.Left;
             PassKey = input.PassKey;
             IsEnableCompact = input.Compact == 1;
-            PeerWantCount = input.NumWant;
+            PeerWantCount = input.NumWant ?? 30;
         }
         
         public static implicit operator AnnounceRequestParameters(GetTrackInfoInput input)

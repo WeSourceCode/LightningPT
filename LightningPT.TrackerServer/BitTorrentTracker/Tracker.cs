@@ -26,8 +26,8 @@ namespace LightningPT.TrackerServer.BitTorrentTracker
             
             _random = new Random();
             
-            AnnounceInterval = TimeSpan.FromSeconds(30);
-            MinAnnounceInterval = TimeSpan.FromMinutes(30);
+            AnnounceInterval = TimeSpan.FromMinutes(30);
+            MinAnnounceInterval = TimeSpan.FromSeconds(30);
             TimeoutInterval = TimeSpan.FromMinutes(5);
             TrackerId = new BString("LightningPT-Tracker");
         }

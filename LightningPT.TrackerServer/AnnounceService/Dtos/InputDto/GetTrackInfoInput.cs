@@ -54,7 +54,7 @@ namespace LightningPT.TrackerServer.AnnounceService.Dtos.InputDto
         /// <summary>
         /// 表示客户端想要获得的 Peer 数量。
         /// </summary>
-        public int NumWant { get; set; }
+        public int? NumWant { get; set; }
 
         /// <summary>
         /// 用户唯一密钥。

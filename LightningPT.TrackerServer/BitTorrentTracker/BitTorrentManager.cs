@@ -88,7 +88,7 @@ namespace LightningPT.TrackerServer.BitTorrentTracker
 
             var peers = _peers[@params.InfoHash];
             
-            var peer = peers.FirstOrDefault(x => x.PeerId == @params.InfoHash);
+            var peer = peers.FirstOrDefault(x => x.UniqueId == @params.ClientAddress.ToString());
             if (peer == null)
             {
                 peer = AddPeer(@params.InfoHash,new Peer(@params));
