@@ -12,7 +12,7 @@ namespace LightningPT.TrackerServer.AnnounceService.Dtos.InputDto
         /// <summary>
         /// 客户端的随机 Id，由 BT 客户端生成。
         /// </summary>
-        public string PeerId { get; set; }
+        public string Peer_Id { get; set; }
 
         /// <summary>
         /// 客户端的 IP 地址。
@@ -50,6 +50,11 @@ namespace LightningPT.TrackerServer.AnnounceService.Dtos.InputDto
         /// 的时候则表示客户端不接受。
         /// </summary>
         public int Compact { get; set; }
+
+        /// <summary>
+        /// 表示客户端想要获得的 Peer 数量。
+        /// </summary>
+        public int NumWant { get; set; }
 
         /// <summary>
         /// 用户唯一密钥。

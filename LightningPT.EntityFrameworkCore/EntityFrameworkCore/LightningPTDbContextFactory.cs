@@ -1,3 +1,4 @@
+using System;
 using LightningPT.Core;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
@@ -12,6 +13,7 @@ namespace LightningPT.EntityFrameworkCore.EntityFrameworkCore
             var builder = new DbContextOptionsBuilder<LightningPTDbContext>();
             var connectString = LightningPTCoreConsts.DefaultConnectionString;
 
+            Console.WriteLine(connectString);
             LightningPTDbContextConfigurer<LightningPTDbContext>.Configure(builder,connectString);
             
             return new LightningPTDbContext(builder.Options);

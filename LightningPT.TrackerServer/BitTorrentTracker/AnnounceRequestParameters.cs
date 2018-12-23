@@ -1,4 +1,7 @@
+using System;
 using System.Net;
+using System.Web;
+using BencodeNET.Objects;
 using LightningPT.TrackerServer.AnnounceService.Dtos.InputDto;
 
 namespace LightningPT.TrackerServer.BitTorrentTracker
@@ -41,21 +44,41 @@ namespace LightningPT.TrackerServer.BitTorrentTracker
         public long Left { get; private set; }
 
         /// <summary>
+        /// Peer 是否允许启用压缩。
+        /// </summary>
+        public bool IsEnableCompact { get; private set; }
+
+        /// <summary>
+        /// Peer 想要获得的可用的 Peer 数量。
+        /// </summary>
+        public int PeerWantCount { get; private set; }
+        
+        /// <summary>
         /// 用户唯一密钥。
         /// </summary>
         public string PassKey { get; private set; }
+
+        /// <summary>
+        /// 如果出现了异常，则本属性则存放有具体的错误信息。
+        /// </summary>
+        public BDictionary Error { get; private set; }
         
         public AnnounceRequestParameters(){ }
 
         public AnnounceRequestParameters(GetTrackInfoInput input)
         {
+            Error = new BDictionary();
+            
             ClientAddress = ClientAddressConvert(input);
-            PeerId = input.PeerId;
+            InfoHash = InfoHashConvert(input);
+            PeerId = input.Peer_Id;
             Uploaded = input.Uploaded;
             Downloaded = input.Downloaded;
             Event = EventConvert(input);
             Left = input.Left;
             PassKey = input.PassKey;
+            IsEnableCompact = input.Compact == 1;
+            PeerWantCount = input.NumWant;
         }
         
         public static implicit operator AnnounceRequestParameters(GetTrackInfoInput input)
@@ -86,6 +109,23 @@ namespace LightningPT.TrackerServer.BitTorrentTracker
                 default:
                     return TorrentEvent.None;
             }
+        }
+
+        private string InfoHashConvert(GetTrackInfoInput input)
+        {
+            var infoHashBytes = HttpUtility.UrlDecodeToBytes(input.Info_Hash);
+            if (infoHashBytes == null)
+            {
+                Error.Add(LightningPTTrackerServerConsts.FailureKey,new BString($"InfoHash 不能为空。"));
+                return string.Empty;
+            }
+            
+            if (infoHashBytes.Length != 20)
+            {
+                Error.Add(LightningPTTrackerServerConsts.FailureKey,new BString($"InfoHash 字段的长度 （{infoHashBytes.Length}） 不符合 BT 协议规范。"));
+            }
+
+            return BitConverter.ToString(infoHashBytes);
         }
     }
 }

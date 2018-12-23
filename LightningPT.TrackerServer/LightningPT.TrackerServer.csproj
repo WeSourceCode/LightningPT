@@ -6,11 +6,11 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\LightningPT.Core\LightningPT.Core.csproj" />
+      <PackageReference Include="BencodeNET" Version="2.2.24" />
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="BencodeNET" Version="2.2.24" />
+      <ProjectReference Include="..\LightningPT.Application\LightningPT.Application.csproj" />
     </ItemGroup>
 
 </Project>

@@ -5,6 +5,6 @@ namespace LightningPT.Core
     /// </summary>
     public class LightningPTCoreConsts
     {
-        public const string DefaultConnectionString = "";
+        public const string DefaultConnectionString = "Server=127.0.0.1;Port=3306;Database=LightningPT;Uid=root;Pwd=root;";
     }
 }

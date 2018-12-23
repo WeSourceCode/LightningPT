@@ -18,6 +18,7 @@ namespace LightningPT.Web.Host
          public override void PreInitialize()
          {
              ConfigureAspNetCoreWeb();
+             ConfigureDataBase();
          }
 
          private void ConfigureAspNetCoreWeb()
