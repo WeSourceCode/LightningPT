@@ -10,7 +10,7 @@
 
     <ItemGroup>
       <Folder Include="BackendWebSiteService\BitTorrentManagementService\Dtos\InputDtos" />
-      <Folder Include="FrontWebSiteService\Overview\Dtos" />
+      <Folder Include="FrontWebSiteService\Overview\Dtos\InputDtos" />
     </ItemGroup>
 
     <ItemGroup>
